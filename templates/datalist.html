@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container mt-5">
+  <h2>Registered Users</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th><th>Username</th><th>Name</th><th>Gender</th><th>Age</th><th>Department</th><th>Position</th>
+        {% if role == "admin" %}
+          <th>Actions</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.department }}</td>
+        <td>{{ user.position }}</td>
+        {% if role == "admin" %}
+        <td>
+          <a href="{{ url_for('update', id=user.id) }}" class="btn btn-warning btn-sm">Edit</a>
+          <a href="{{ url_for('delete', id=user.id) }}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if role == "admin" %}
+    <a href="{{ url_for('create') }}" class="btn btn-success">Add Employee</a>
+  {% endif %}
+</div>
+{% endblock %}

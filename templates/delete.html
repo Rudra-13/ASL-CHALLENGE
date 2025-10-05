@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Delete Employee {% endblock %}
+
+{% block body %}
+<div class="container">
+<form action="" method="post">
+    <p>Click <strong>YES</strong> to confirm deletion.</p>
+    <input type="submit" value="YES" class="btn btn-danger">
+    <a href="{{ url_for('RetrieveList') }}" class="btn btn-secondary">Cancel</a>
+</form>
+</div>
+{% endblock %}
+

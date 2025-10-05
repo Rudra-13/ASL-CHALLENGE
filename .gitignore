@@ -1,0 +1,20 @@
+# Virtual environments
+venv/
+env/
+crud/
+__pycache__/
+instance/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

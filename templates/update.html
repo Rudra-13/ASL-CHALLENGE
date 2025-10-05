@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container mt-5">
+  <h2>Edit Employee</h2>
+  <form method="POST">
+    <div class="mb-3"><label>Name</label><input type="text" name="name" class="form-control" value="{{ user.name }}"></div>
+    <div class="mb-3"><label>Gender</label><input type="text" name="gender" class="form-control" value="{{ user.gender }}"></div>
+    <div class="mb-3"><label>Age</label><input type="number" name="age" class="form-control" value="{{ user.age }}"></div>
+    <div class="mb-3"><label>Department</label><input type="text" name="department" class="form-control" value="{{ user.department }}"></div>
+    <div class="mb-3"><label>Position</label><input type="text" name="position" class="form-control" value="{{ user.position }}"></div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{{ url_for('datalist') }}" class="btn btn-secondary">Back</a>
+  </form>
+</div>
+{% endblock %}
